@@ -6,3 +6,99 @@
 
 // 	},
 // });
+frappe.ui.form.on('Shopping List', {
+	onload_post_render(frm) {
+        function chngeColor(elem){
+            var client = new XMLHttpRequest();
+        	client.open('GET', '/files/'+elem);
+        	client.onreadystatechange = function() {
+        	    if (client.status === 0 || (client.status == 200)){
+        	        console.log (client.status);
+            	    $("."+elem).each(function(i,onj){
+            	        $(this).css('background-color', client.responseText);
+            	        frm.refresh();
+        	        });
+        	    }
+        	};
+            client.send();
+        }
+        chngeColor("input-with-feedback");
+	    chngeColor("btn");
+	    chngeColor("grid-row");
+	    chngeColor("grid-heading-row");
+        chngeColor("form-page");
+        chngeColor("grid-footer");
+        chngeColor("container");
+	    if (!frm.is_new()){
+	        setInterval(function () {
+	            var tbl = frm.doc.take_tbl;
+                var i = tbl.length;
+                var child;
+                if (i == 1) {
+                    if (tbl[0].taken) {
+                        child = frm.add_child("took_tbl");
+                        child.product = tbl[0].product;
+                        frm.set_value('take_tbl', []);
+                    }
+                }
+                else {
+                    while (i--) {
+                        if(tbl[i].taken) {
+                            child = frm.add_child("took_tbl");
+                            child.product = tbl[i].product;
+                            frm.get_field("take_tbl").grid.grid_rows[i].remove();
+                        }
+                    }
+                }
+                tbl = frm.doc.took_tbl;
+                i = tbl.length;
+                if (i == 1) {
+                    if (!tbl[0].taken) {
+                        child = frm.add_child("take_tbl");
+                        child.product = tbl[0].product;
+                        frm.set_value('took_tbl', []);
+                    }
+                }
+                else {
+                    while (i--) {
+                        if(!tbl[i].taken) {
+                            child = frm.add_child("take_tbl");
+                            child.product = tbl[i].product;
+                            frm.get_field("took_tbl").grid.grid_rows[i].remove();
+                        }
+                    }
+                }
+                frm.refresh();
+	        }, 10000);
+	    }
+	}
+});
+
+frappe.ui.form.on('Shopping List', {
+	before_save(frm) {
+    var tbl = frm.doc.take_tbl;
+    var n = tbl.length;
+    var prod;
+    var prods = [];
+    var i;
+    if (n > 1) {
+      while (n--){
+        prod = tbl[n].product;
+        i = prods.indexOf(prod);
+        if ((i >= 0) && (i < n)){
+          frm.get_field("take_tbl").grid.grid_rows[n].remove();
+        }
+        else {
+          prods.push(prod);
+        }
+      }
+	  }
+  }
+});
+
+
+frappe.ui.form.on('Shopping List', {
+	refresh(frm) {
+		// your code here
+	}
+});
