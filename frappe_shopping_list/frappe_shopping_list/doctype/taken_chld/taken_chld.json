@@ -1,7 +1,6 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{product}_{DD}.{MM}",
  "creation": "2024-04-15 08:50:50.104596",
  "doctype": "DocType",
  "editable_grid": 1,
