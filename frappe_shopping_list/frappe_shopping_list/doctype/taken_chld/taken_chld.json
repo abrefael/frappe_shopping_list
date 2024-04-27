@@ -24,6 +24,22 @@
    "label": "Product",
    "options": "Product",
    "reqd": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "quant",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Quantity",
+   "reqd": 0
+  },
+  {
+   "fieldname": "unit",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Unit",
+   "options": "Units",
+   "reqd": 0
   }
  ],
  "index_web_pages_for_search": 1,
