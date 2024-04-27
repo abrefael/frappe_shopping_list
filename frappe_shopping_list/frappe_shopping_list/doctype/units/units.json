@@ -27,7 +27,7 @@
  "modified": "2024-04-16 14:21:57.716671",
  "modified_by": "Administrator",
  "module": "Frappe Shopping List",
- "name": "Product",
+ "name": "Units",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
