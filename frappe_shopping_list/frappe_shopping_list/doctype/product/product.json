@@ -6,7 +6,9 @@
  "engine": "InnoDB",
  "field_order": [
   "product_name_section",
-  "product"
+  "product",
+  "unit",
+  "image"
  ],
  "fields": [
   {
@@ -22,7 +24,13 @@
    "unique": 1
   },
   {
-   "fieldname": "Image",
+   "fieldname": "unit",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "units"
+  }
+  {
+   "fieldname": "image",
    "fieldtype": "Attach Image",
    "reqd": 0
   }
