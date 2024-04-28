@@ -34,11 +34,12 @@
    "reqd": 0
   },
   {
+   "default": "Unit",
    "fieldname": "unit",
-   "fieldtype": "Link",
+   "fieldtype": "data",
+   "fetch_from": "product.unit",
    "in_list_view": 1,
    "label": "Unit",
-   "options": "Units",
    "reqd": 0
   }
  ],
