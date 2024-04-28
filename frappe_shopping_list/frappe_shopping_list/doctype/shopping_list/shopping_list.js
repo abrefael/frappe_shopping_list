@@ -81,7 +81,9 @@ frappe.ui.form.on('Shopping List', {
                     }
                 }
                 frm.refresh();
-		frm.save();
+		if (frm.is_dirty()){
+			frm.save();
+		}
 	        }, 10000);
 	    }
 	}
