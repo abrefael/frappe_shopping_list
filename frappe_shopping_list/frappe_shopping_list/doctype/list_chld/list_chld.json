@@ -34,7 +34,6 @@
    "reqd": 0
   },
   {
-   "default": "Unit",
    "fieldname": "unit",
    "fieldtype": "data",
    "fetch_from": "product.unit",
