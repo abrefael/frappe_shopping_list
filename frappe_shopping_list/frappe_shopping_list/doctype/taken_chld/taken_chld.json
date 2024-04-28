@@ -7,7 +7,9 @@
  "engine": "InnoDB",
  "field_order": [
   "taken",
-  "product"
+  "product",
+  "quant",
+  "unit"
  ],
  "fields": [
   {
@@ -30,17 +32,14 @@
    "fieldname": "quant",
    "fieldtype": "Int",
    "in_list_view": 1,
-   "label": "Quantity",
-   "reqd": 0
+   "label": "Quantity"
   },
   {
-   "default": "Unit",
-   "fieldname": "unit",
-   "fieldtype": "data",
    "fetch_from": "product.unit",
+   "fieldname": "unit",
+   "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Unit",
-   "reqd": 0
+   "label": "Unit"
   }
  ],
  "index_web_pages_for_search": 1,
