@@ -34,41 +34,54 @@ frappe.ui.form.on('Shopping List', {
 	            var tbl = frm.doc.take_tbl;
                 var i = tbl.length;
                 var child;
+				var origin;
                 if (i == 1) {
-                    if (tbl[0].taken) {
+					origin = tbl[0];
+                    if (origin.taken) {
                         child = frm.add_child("took_tbl");
-                        child.product = tbl[0].product;
+                        child.product = origin.product;
+						child.quant = origin.quant;
+						child.unit = origin.unit;
                         frm.set_value('take_tbl', []);
                     }
                 }
                 else {
                     while (i--) {
-                        if(tbl[i].taken) {
-                            child = frm.add_child("took_tbl");
-                            child.product = tbl[i].product;
-                            frm.get_field("take_tbl").grid.grid_rows[i].remove();
-                        }
+						origin = tbl[i];
+						if (origin.taken) {
+							child = frm.add_child("took_tbl");
+							child.product = origin.product;
+							child.quant = origin.quant;
+							child.unit = origin.unit;
+						}
                     }
                 }
                 tbl = frm.doc.took_tbl;
                 i = tbl.length;
                 if (i == 1) {
+					origin = tbl[0];
                     if (!tbl[0].taken) {
                         child = frm.add_child("take_tbl");
-                        child.product = tbl[0].product;
+                        child.product = origin.product;
+						child.quant = origin.quant;
+						child.unit = origin.unit;
                         frm.set_value('took_tbl', []);
                     }
                 }
                 else {
                     while (i--) {
+						origin = tbl[i];
                         if(!tbl[i].taken) {
                             child = frm.add_child("take_tbl");
-                            child.product = tbl[i].product;
+                            child.product = origin.product;
+							child.quant = origin.quant;
+							child.unit = origin.unit;
                             frm.get_field("took_tbl").grid.grid_rows[i].remove();
                         }
                     }
                 }
                 frm.refresh();
+		frm.save();
 	        }, 10000);
 	    }
 	}
