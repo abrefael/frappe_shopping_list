@@ -25,7 +25,7 @@
    "in_list_view": 1,
    "label": "Product",
    "options": "Product",
-   "reqd": 1
+   "reqd": 0
   },
   {
    "default": "1",
