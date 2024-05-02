@@ -6,19 +6,11 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "taken",
   "product",
   "quant",
   "unit"
  ],
  "fields": [
-  {
-   "default": "0",
-   "fieldname": "taken",
-   "fieldtype": "Check",
-   "in_list_view": 1,
-   "label": "Taken?"
-  },
   {
    "fieldname": "product",
    "fieldtype": "Link",
