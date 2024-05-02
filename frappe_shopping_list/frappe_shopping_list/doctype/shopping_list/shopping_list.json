@@ -7,8 +7,8 @@
  "engine": "InnoDB",
  "field_order": [
   "where_to_buy",
-  "take_tbl",
-  "took_tbl"
+  "list_chld",
+  "taken_chld"
  ],
  "fields": [
   {
@@ -19,13 +19,13 @@
    "options": "Market\nGroceries store\nOther"
   },
   {
-   "fieldname": "take_tbl",
+   "fieldname": "list_chld",
    "fieldtype": "Table",
    "label": "To Take",
    "options": "list_chld"
   },
   {
-   "fieldname": "took_tbl",
+   "fieldname": "taken_chld",
    "fieldtype": "Table",
    "label": "Taken",
    "options": "taken_chld"
