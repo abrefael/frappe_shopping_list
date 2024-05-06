@@ -77,6 +77,18 @@ function DoIt(elem,frm){
 }
 
 
+frappe.ui.form.on('Shopping List', {
+	onload(frm) {
+        chngeColor("input-with-feedback");
+	chngeColor("btn");
+	chngeColor("grid-row");
+	chngeColor("grid-heading-row");
+        chngeColor("form-page");
+        chngeColor("grid-footer");
+        chngeColor("container");
+	}
+});
+
 function chngeColor(elem){
 	var client = new XMLHttpRequest();
 	client.open('GET', '/files/'+elem);
