@@ -1,12 +1,13 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{where_to_buy}-{DD}.{MM}",
+ "autoname": "format:{where_to_buy}-{DD}.{MM}-{special_name}",
  "creation": "2024-04-15 08:53:10.082183",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "where_to_buy",
+  "special_name",
   "list_chld",
   "taken_chld"
  ],
@@ -18,6 +19,11 @@
    "label": "Where to buy",
    "options": "Market\nGroceries store\nOther"
   },
+  {
+   "default": "",
+   "fieldname": "special_name",
+   "fieldtype": "Data",
+   "label": "A special name for ths list (e.g. Pharmacy)",
   {
    "fieldname": "list_chld",
    "fieldtype": "Table",
