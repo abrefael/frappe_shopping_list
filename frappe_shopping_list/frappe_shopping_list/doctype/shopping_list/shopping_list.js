@@ -15,18 +15,22 @@ var dest;
 frappe.ui.form.on('Shopping List', {
 	refresh: function(frm) {
         frm.fields_dict.list_chld.grid.wrapper.on('click', '.grid-row-check', function(event) {
-            lst = 'list_chld';
-            dest = 'taken_chld';
-            DoIt(event.target,frm);
+	    var tar = event.target;
+	    if (tar.checked == true){
+	         tar.checked = false;
+                 lst = 'list_chld';
+                 dest = 'taken_chld';
+                 DoIt(tar,frm);
+	    }
         });
         frm.fields_dict.taken_chld.grid.wrapper.on('click', '.grid-row-check', function(event) {
-            lst = 'taken_chld';
-            dest = 'list_chld';
-            DoIt(event.target,frm);
-            if (frm.doc.taken_chld.length == 1){
-                frm.set_value(lst,[]);
-                frm.refresh_field(lst);
-            }
+            var tar = event.target;
+	    if (tar.checked == true){
+	         tar.checked = false;
+                 lst = 'list_chld';
+                 dest = 'taken_chld';
+                 DoIt(tar,frm);
+	    }
         });
 		if ((product) && (product != '')){
 			var child = frm.add_child(dest);
@@ -43,7 +47,6 @@ frappe.ui.form.on('Shopping List', {
 
 
 function DoIt(elem,frm){
-    if (elem.checked == true){
         var row = elem.parentNode.parentNode.parentNode;
         //lst = row.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.getAttribute('data-fieldname');
         var idx = row.getAttribute('data-name');
@@ -73,7 +76,6 @@ function DoIt(elem,frm){
     		frm.refresh_field(lst);
         }
         frm.save();
-    }
 }
 
 
