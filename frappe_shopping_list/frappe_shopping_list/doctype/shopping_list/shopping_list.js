@@ -27,8 +27,8 @@ frappe.ui.form.on('Shopping List', {
             var tar = event.target;
 	    if (tar.checked == true){
 	         tar.checked = false;
-                 lst = 'list_chld';
-                 dest = 'taken_chld';
+                 dest = 'list_chld';
+                 lst = 'taken_chld';
                  DoIt(tar,frm);
 	    }
         });
