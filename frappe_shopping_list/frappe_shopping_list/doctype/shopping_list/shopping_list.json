@@ -24,6 +24,7 @@
    "fieldname": "special_name",
    "fieldtype": "Data",
    "label": "A special name for ths list (e.g. Pharmacy)"
+  },
   {
    "fieldname": "list_chld",
    "fieldtype": "Table",
