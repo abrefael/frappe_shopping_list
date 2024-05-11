@@ -32,50 +32,42 @@ frappe.ui.form.on('Shopping List', {
                  DoIt(tar,frm);
 	    }
         });
-		//if ((product) && (product != '')){
-			
-		//}
 	}
 });
 
 
 function DoIt(elem,frm){
         var row = elem.parentNode.parentNode.parentNode;
-        //lst = row.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.getAttribute('data-fieldname');
         var idx = row.getAttribute('data-name');
         var row_num = Number(row.getAttribute('data-idx'))-1;
-        //var src_lst = frm.doc.list_chld;
         document.querySelectorAll('[data-doctype="Product"]').forEach((prod) => {
             if (prod.parentNode.parentNode.parentNode.parentNode.getAttribute('data-name') == idx){
-                    product = prod.getAttribute('data-value');
+                product = prod.getAttribute('data-value');
             }
         });
         document.querySelectorAll('[data-fieldname="quant"]').forEach((q) => {
             if (q.parentNode.parentNode.getAttribute('data-name') == idx){
-                    quant = q.lastChild.textContent;//('data-value');
+                quant = q.lastChild.textContent;//('data-value');
             }
         });
         document.querySelectorAll('[data-fieldname="unit"]').forEach((u) => {
             if (u.parentNode.parentNode.getAttribute('data-name') == idx){
-                    unit = u.lastChild.textContent;//('data-value');
+                unit = u.lastChild.textContent;//('data-value');
             }
         });
         if (((lst == 'list_child') && (frm.doc.list_chld.length == 1)) || ((lst == 'taken_child') && (frm.doc.taken_chld.length == 1))){
             frm.set_value(lst,[]);
-            //frm.refresh_field(lst);
         }
         else{
     	    frm.get_field(lst).grid.grid_rows[row_num].remove();
-    		//frm.refresh_field(lst);
         }
 	var child = frm.add_child(dest);
-			child.product = product;
-			child.quant = quant;
-			child.unit = unit;
-			//frm.refresh_field(dest);
-		    chngeColor("grid-row");
-			product = '';
+	child.product = product;
+	child.quant = quant;
+	child.unit = unit;
+	product = '';
         frm.save();
+        chngeColor("grid-row");
 }
 
 
