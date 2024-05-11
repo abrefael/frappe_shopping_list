@@ -62,17 +62,17 @@ function DoIt(elem,frm){
         });
         if (((lst == 'list_child') && (frm.doc.list_chld.length == 1)) || ((lst == 'taken_child') && (frm.doc.taken_chld.length == 1))){
             frm.set_value(lst,[]);
-            frm.refresh_field(lst);
+            //frm.refresh_field(lst);
         }
         else{
     	    frm.get_field(lst).grid.grid_rows[row_num].remove();
-    		frm.refresh_field(lst);
+    		//frm.refresh_field(lst);
         }
 	var child = frm.add_child(dest);
 			child.product = product;
 			child.quant = quant;
 			child.unit = unit;
-			frm.refresh_field(dest);
+			//frm.refresh_field(dest);
 		    chngeColor("grid-row");
 			product = '';
         frm.save();
