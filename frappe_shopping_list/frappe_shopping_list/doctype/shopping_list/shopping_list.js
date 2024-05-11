@@ -32,16 +32,9 @@ frappe.ui.form.on('Shopping List', {
                  DoIt(tar,frm);
 	    }
         });
-		if ((product) && (product != '')){
-			var child = frm.add_child(dest);
-			child.product = product;
-			child.quant = quant;
-			child.unit = unit;
-			frm.refresh_field(dest);
-		    chngeColor("grid-row");
-			product = '';
-			frm.save();
-		}
+		//if ((product) && (product != '')){
+			
+		//}
 	}
 });
 
@@ -75,6 +68,13 @@ function DoIt(elem,frm){
     	    frm.get_field(lst).grid.grid_rows[row_num].remove();
     		frm.refresh_field(lst);
         }
+	var child = frm.add_child(dest);
+			child.product = product;
+			child.quant = quant;
+			child.unit = unit;
+			frm.refresh_field(dest);
+		    chngeColor("grid-row");
+			product = '';
         frm.save();
 }
 
