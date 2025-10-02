@@ -1,0 +1,35 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"zs07Gc4HNc\",\"type\":\"header\",\"data\":{\"text\":\"Shop\",\"col\":12}},{\"id\":\"KPfejiUjLQ\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Shopping List\",\"col\":12}}]",
+ "creation": "2025-10-02 09:55:25.274281",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "retail",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Shop",
+ "links": [],
+ "modified": "2025-10-02 09:57:53.191585",
+ "modified_by": "Administrator",
+ "module": "Frappe Shopping List",
+ "name": "Shop",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [
+  {
+   "document_type": "Shopping List",
+   "label": "Shopping List",
+   "quick_list_filter": "[]"
+  }
+ ],
+ "roles": [],
+ "sequence_id": 1.0,
+ "shortcuts": [],
+ "title": "Shop"
+}
